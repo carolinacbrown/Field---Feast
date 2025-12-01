@@ -1,0 +1,231 @@
+/* CSS BY Carolina Brown */
+
+/* IMPORTED FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ROOT VARIABLES */
+
+:root {
+    --midnight-blue: #1F2A44;
+    --olive-green: #76885B;
+    --champagne-gold: #E5C185;
+    --linen: #F8F4EC;
+    --dark-charcoal: #2B2B2B;
+    --soft-white: #FAF9F6;
+
+    --ff-heading: 'Playfair Display', serif;
+    --ff-body: 'Playfair Display', serif;
+
+    --radius: 8px;
+    --shadow: 0 3px 6px rgba(0,0,0,0.15);
+
+    --section-spacing: 1rem;
+}
+
+
+/* GLOBAL STYLES */
+
+body {
+    margin: 0;
+    font-family: var(--ff-body);
+    color: var(--dark-charcoal);
+    background: var(--linen);
+    line-height: 1.6;
+}
+
+.section {
+    padding: var(--section-spacing) 1rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid var(--champagne-gold);
+    margin: 2rem 0;
+}
+
+/* HEADER SECTION STYLES */
+
+.header {
+    background: var(--midnight-blue);
+    color: var(--soft-white);
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+}
+
+.header-logo img {
+    width: 140px;
+    margin: 0 auto 1.5rem;
+}
+
+.site-title {
+    font-family: var(--ff-heading);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-family: var(--ff-heading);
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: center;
+    background: var(--champagne-gold);
+    color: var(--dark-charcoal);
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0.75rem;
+    gap: 3rem;
+}
+
+.top-nav a {
+    color: var(--midnight-blue);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+
+/* INTRO SECTION */
+
+.intro {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--section-spacing) 2rem;
+}
+
+.intro p {
+    max-width: 1100px;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+/* OFFERINGS SECTION */
+
+
+.offerings {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+}
+
+.offerings h2 {
+    grid-column: 1 / -1;
+}
+
+.offerings .offering-card:nth-of-type(3) {
+    grid-column: 1/ -1;
+}
+
+.offering-card {
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.green-card {
+    background: var(--olive-green);
+    color: var(--soft-white);
+}
+
+.green-card h3 {
+    color: var(--soft-white);
+}
+
+.green-card ul {
+    margin: 1rem 0 1.5rem 1.25rem;
+}
+
+.green-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* GALLERY SECTION */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-grid figure {
+    background: var(--soft-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.gallery-grid img {
+    width: 100%;
+    display: block;
+}
+
+.gallery-grid figcaption {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+.full-gallery-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.75rem 2rem;
+    background: var(--olive-green);
+    color: var(--soft-white);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    background: var(--midnight-blue);
+    color: var(--soft-white);
+    padding: 2.5rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer a {
+    color: var(--champagne-gold);
+    text-decoration: none;
+}
+
+.socials {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+/* MAYBE RESPONSIVE? */
+
+@media (max-width: 700px) {
+    .offerings {
+        grid-template-columns: 1fr;
+    }
+
+    .offerings .offering-card:nth-of-type(3) {
+        grid-column: auto;
+    }
+}
